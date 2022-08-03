@@ -1,0 +1,20 @@
+.backgournd {  
+  position: relative;
+  height: 100vh;
+  filter: brightness(80%) grayscale(0%);
+
+  .overlay {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    h1 {
+      margin-top: 10%;
+      margin-left: 5%;
+      color: white;
+      font-size: 7rem;
+    }    
+  }
+}

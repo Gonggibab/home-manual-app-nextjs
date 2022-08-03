@@ -1,0 +1,27 @@
+// Color variables
+$gray: rgba(73, 72, 72);
+
+
+// Font-weights:
+// Noto Sans KR: 400, 700, 900
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  background-color: $gray;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  
+  &:visited {
+    color: none;
+  }
+}
