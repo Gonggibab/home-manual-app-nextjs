@@ -11,7 +11,7 @@ function Document() {
           crossOrigin="True"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@400;700;900&display=swap"
           rel="stylesheet"
         />
       </Head>

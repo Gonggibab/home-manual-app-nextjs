@@ -1,16 +1,24 @@
+@import './mixin';
+
 // Color variables
 $gray: rgba(73, 72, 72);
 
-
-// Font-weights:
+// Font-weights
 // Noto Sans KR: 400, 700, 900
+// Noto Serif KR: 400, 700
+// Nanum Myeongjo: 700
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 16px;
+  color: white;
   background-color: $gray;
+  font-family: 'Noto Sans KR','Noto Serif KR', 'Nanum Myeongjo' serif, sans-serif;
+  font-size: 16px;
+
+  @include device(tablet) {
+    font-size: 14px;
+  }
 }
 
 * {
@@ -18,10 +26,16 @@ body {
 }
 
 a {
+  color:white;
   text-decoration: none;
   cursor: pointer;
   
   &:visited {
     color: none;
   }
+}
+
+h1, h2 {
+  padding: 0;
+  margin: 0;
 }
