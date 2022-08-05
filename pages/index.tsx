@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import type { NextPage } from 'next';
 
-import useScroll from '../components/hooks/scroll';
+import useScroll from '../utils/hooks/useScroll';
 
 import HomeFirstSection from '../components/home/HomeFirstSection';
 import HomeSecondSection from '../components/home/HomeSecondSection';

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import style from '../../styles/components/home/HomeFirstSection.module.scss';
-import image from '../../images/home/home_background.jpg';
+import bgImg from '../../images/home/home-background.jpg';
 import { BsGeoAltFill } from 'react-icons/bs';
 
 function HomeFirstSection() {
@@ -20,7 +20,7 @@ function HomeFirstSection() {
         </div>
       </div>
       <Image
-        src={image}
+        src={bgImg}
         alt="홈 배경 이미지"
         layout="fill"
         objectFit="cover"
