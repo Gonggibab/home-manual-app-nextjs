@@ -1,7 +1,7 @@
 @import './mixin';
 
 // Color variables
-$gray: rgba(73, 72, 72);
+$bg-black: #121212;
 
 // Font-weights
 // Noto Sans KR: 400, 700, 900
@@ -12,7 +12,7 @@ body {
   padding: 0;
   margin: 0;
   color: white;
-  background-color: $gray;
+  background-color: $bg-black;
   font-family: 'Noto Sans KR','Noto Serif KR', 'Nanum Myeongjo' serif, sans-serif;
   font-size: 16px;
 

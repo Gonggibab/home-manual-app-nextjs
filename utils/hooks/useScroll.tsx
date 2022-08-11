@@ -1,27 +1,11 @@
-import { RefObject, useEffect } from 'react';
+import { useEffect } from 'react';
 
-import throttle from '../throttle';
-
-export default function useScroll(ref: RefObject<HTMLElement>) {
+export const useScroll = (scrollListner: (this: Window, ev: Event) => any) => {
   useEffect(() => {
-    const target = ref?.current ?? document.body;
-    let count = 0;
-
-    const handleWheelAnimation = (e: WheelEvent) => {
-      console.log(e);
-    };
-
-    const handleResizeAnimation = () => {
-      count += 1;
-      console.log('Resize Count: ' + count);
-    };
-
-    target.addEventListener('wheel', handleWheelAnimation);
-    window.addEventListener('resize', throttle(handleResizeAnimation, 500));
+    window.addEventListener('scroll', scrollListner, { passive: true });
 
     return () => {
-      target.removeEventListener('wheel', handleWheelAnimation);
-      window.removeEventListener('resize', throttle(handleResizeAnimation, 500));
+      window.removeEventListener('scroll', scrollListner);
     };
-  }, [ref]);
-}
+  }, []);
+};
