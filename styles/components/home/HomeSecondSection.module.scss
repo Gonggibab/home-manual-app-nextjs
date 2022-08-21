@@ -1,6 +1,37 @@
 @import "../../mixin";
 
-.backgournd {  
+.section {  
   position: relative;
-  height: 100vh;  
+  height: 500vh;  
+    
+  .yearContent {
+    position: sticky;
+    top:0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    h3{
+      margin-bottom: 2rem;
+      font-family: 'Gowun Batang', serif,;
+      font-size: 5rem;
+
+      @include device(mobile) {
+        font-size: 3rem;
+      }
+    }
+
+    p{
+      font-family: 'Gowun Batang', serif,;
+      font-size: 3rem;
+
+      @include device(mobile) {
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
