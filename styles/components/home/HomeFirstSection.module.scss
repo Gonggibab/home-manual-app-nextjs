@@ -1,13 +1,13 @@
-@import "../../mixin";
+@import '../../mixin';
 
-.backgournd{  
+.backgournd {
   position: relative;
   height: 300vh;
   transition: all 200;
 
-  .content{
+  .content {
     position: sticky;
-    top:0;
+    top: 0;
     height: 100vh;
 
     .overlay {
@@ -17,38 +17,38 @@
       height: 100%;
       display: flex;
       align-items: center;
-      
-      .title {      
+
+      .title {
         position: relative;
         bottom: 5rem;
         left: 3rem;
-  
+
         h1 {
           font-family: 'Nanum Myeongjo', serif;
           font-weight: 700;
           font-size: 7rem;
-    
+
           @include device(mobile) {
             font-size: 4rem;
           }
-        }    
-    
+        }
+
         h2 {
           display: flex;
           align-items: center;
           margin-top: 1rem;
-          margin-left: 1rem;      
+          margin-left: 1rem;
           font-size: 1.2rem;
-    
+
           @include device(mobile) {
             font-size: 1rem;
           }
-    
+
           svg {
             margin-right: 5px;
           }
         }
-      }    
+      }
     }
 
     .image {
