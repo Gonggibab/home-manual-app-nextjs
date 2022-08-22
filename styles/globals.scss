@@ -4,17 +4,19 @@
 $bg-black: #121212;
 
 // Font-weights
-// Noto Sans KR: 400, 700, 900
-// Noto Serif KR: 400, 700
-// Nanum Myeongjo: 700
+// 'Noto Sans KR', sans-serif: 400, 700, 900
+// 'Noto Serif KR', serif: 400, 700
+// 'Nanum Myeongjo', serif: 700
+// 'Gowun Batang', serif: 400, 700
 html,
 body {
   padding: 0;
   margin: 0;
   color: white;
   background-color: $bg-black;
-  font-family: 'Noto Sans KR','Noto Serif KR', 'Nanum Myeongjo' serif, sans-serif;
+  font-family: 'Noto Sans KR','Noto Serif KR', 'Nanum Myeongjo', 'Gowun Batang', serif, sans-serif;
   font-size: 16px;
+  letter-spacing: 1.2px;
 
   @include device(tablet) {
     font-size: 14px;
@@ -29,13 +31,21 @@ a {
   color:white;
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
   
   &:visited {
     color: none;
   }
 }
 
-h1, h2 {
+button {
+  color :white;
+  border: none;
+  outline:none;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, p {
   padding: 0;
   margin: 0;
 }

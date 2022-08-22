@@ -1,37 +1,48 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 import { HomeSectionProps } from '../../pages';
 
 import style from '../../styles/components/home/HomeFirstSection.module.scss';
-import bgImg from '../../images/home/home-background.jpg';
+import bgSkyImg from '../../images/home/background_sky.png';
+import bgMtImg from '../../images/home/background_mountain.png';
 import { BsGeoAltFill } from 'react-icons/bs';
 
 function HomeFirstSection({ pageInfo }: HomeSectionProps) {
-  const [test, setTest] = useState<number>(1);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
+  const [ratio, setTest] = useState<number>(1);
+
+  const opacity = useMotionValue(1);
+  const titleY = useMotionValue(0);
+  const skyY = useMotionValue(0);
+  const mountainY = useMotionValue(0);
+
+  const springConfig = {
+    stiffness: 1000,
+    damping: 300,
+  };
+
+  const springOpac = useSpring(opacity, springConfig);
+  const springTitleY = useSpring(titleY, springConfig);
+  const springSky = useSpring(skyY, springConfig);
+  const springMountain = useSpring(mountainY, springConfig);
 
   useEffect(() => {
     setTest(pageInfo);
 
-    if (contentRef.current) {
-      contentRef.current.style.opacity = `${2 - test * 1.2}`;
-    }
-    if (titleRef.current) {
-      titleRef.current.style.transform = `translateY(${500 - test * 500}px)`;
-    }
-    if (imageRef.current) {
-      imageRef.current.style.transform = `translateY(${1000 - test * 1000}px)`;
+    if (1 < ratio && ratio < 2) {
+      opacity.set(3 - ratio * 2);
+      titleY.set(1000 - ratio * 1000);
+      skyY.set(1200 - ratio * 1200);
+      mountainY.set(1500 - ratio * 1500);
     }
   }, [pageInfo]);
 
   return (
-    <div className={style.backgournd}>
-      <div className={style.content} ref={contentRef}>
-        <div className={style.overlay} ref={titleRef}>
-          <div className={style.title}>
+    <div className={style.section}>
+      <motion.div className={style.imgContent} style={{ opacity: springOpac }}>
+        <div className={style.overlay}>
+          <motion.div className={style.title} style={{ y: springTitleY }}>
             <h1>
               우리집 <br />
               사용설명서
@@ -40,19 +51,32 @@ function HomeFirstSection({ pageInfo }: HomeSectionProps) {
               <BsGeoAltFill />
               밀양시 단장면 바드리마을
             </h2>
-          </div>
+          </motion.div>
         </div>
-        <div className={style.image} ref={imageRef}>
+        <motion.div className={style.image} style={{ y: springSky }}>
           <Image
-            src={bgImg}
+            src={bgSkyImg}
             alt="홈 배경 이미지"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
             quality={100}
           />
-        </div>
-      </div>
+        </motion.div>
+        <motion.div
+          className={style.image}
+          style={{ y: springMountain, zIndex: 2 }}
+        >
+          <Image
+            src={bgMtImg}
+            alt="홈 배경 이미지"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            quality={100}
+          />
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
