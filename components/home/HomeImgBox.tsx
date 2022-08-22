@@ -7,7 +7,7 @@ import { HomeImgBoxProps } from './HomeThirdSection';
 
 import style from '../../styles/components/home/HomeThirdSection.module.scss';
 
-function HomeImgBox({ imgUrl, imgTitle }: HomeImgBoxProps) {
+function HomeImgBox({ imgUrl, imgTitle, imgDescription }: HomeImgBoxProps) {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
@@ -19,6 +19,11 @@ function HomeImgBox({ imgUrl, imgTitle }: HomeImgBoxProps) {
   const textVariants = {
     hover: { y: -10, opacity: 1 },
     notHover: { y: 0, opacity: 0 },
+  };
+
+  const pargraphVariants = {
+    clicked: { opacity: 1 },
+    notClicked: { opacity: 0 },
   };
 
   const imgVariants = {
@@ -40,7 +45,7 @@ function HomeImgBox({ imgUrl, imgTitle }: HomeImgBoxProps) {
       className={style.imgBox}
       animate={isClicked ? 'clicked' : 'notClicked'}
       variants={boxVariants}
-      transition={{ type: 'ease', duration: 1 }}
+      transition={{ type: 'ease', duration: 0.8 }}
     >
       <motion.div
         className={style.overlay}
@@ -51,10 +56,18 @@ function HomeImgBox({ imgUrl, imgTitle }: HomeImgBoxProps) {
         onClick={() => setIsClicked(!isClicked)}
       >
         <h2>{imgTitle}</h2>
-        <p>
-          더 보기
-          <BsArrowRight></BsArrowRight>
-        </p>
+        <motion.div
+          className={style.description}
+          animate={isClicked ? 'clicked' : 'notClicked'}
+          variants={pargraphVariants}
+          transition={{ type: 'ease', duration: 1 }}
+        >
+          {imgDescription}
+        </motion.div>
+        <label>
+          {isClicked ? '다시 클릭해서 닫기' : '더 보기'}
+          {!isClicked && <BsArrowRight />}
+        </label>
       </motion.div>
       <motion.div
         className={style.img}

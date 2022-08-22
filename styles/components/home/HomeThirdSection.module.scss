@@ -34,44 +34,51 @@
 
       .overlay {
         z-index: 1;
-        position:absolute;
+        position: absolute;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
         padding: 1rem 1rem;
         width: 100%;
         height: 100%;
+        font-family: 'Gowun Batang', serif;
         cursor: pointer;
 
         h2 {
-          margin-left: 2rem;
-          margin-bottom: 0.5rem;
-          font-family: 'Gowun Batang', serif;
+          width: 10px;
+          margin-left: 1rem;
+          margin-top: 1rem;          
           font-weight: 700;
 
           @include device(tablet) {
             margin-left: 1rem;
-          }   
+          }    
         }
 
-        p {
+        .description {
+          margin: 1rem 1rem auto 0;
+          padding: 0.5rem 1rem;
+          max-width: 50%;
+          border-radius: 5px;
+          align-self: flex-end;
+          font-weight: 400;
+          background-color: rgba($color: #121212, $alpha: 0.5);
+        }  
+        
+        label {
+          position: absolute;     
+          bottom: 1rem;
+          left: 50%;
+          transform: translate(-50%, 0%);
           display: flex;
           align-items: center;
-          margin-left: 2rem;
-          width: 60%;
-          font-family: 'Gowun Batang', serif;
-          font-weight: 400;
+          font-weight: 700;
           font-size: 0.9rem;
-
-          @include device(tablet) {
-            margin-left: 1rem;
-          }    
 
           svg {
             margin-top: 2px;
             margin-left: 5px;
           }
-        }
+        }          
       }
 
       .img {
