@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 import { useEffect, useState } from 'react';
 
-import HomeImgBox from './HomeImgBox';
+import GridImgBox from './GridImgBox';
 import { HomeSectionProps } from '../../pages';
 
 import style from '../../styles/components/home/HomeThirdSection.module.scss';
@@ -10,7 +10,7 @@ import rockGardenImg from '../../images/home/rock_garden.jpg';
 import treeShelterImg from '../../images/home/tree_shelter.jpg';
 import yardImg from '../../images/home/yard.jpg';
 
-export interface HomeImgBoxProps {
+export interface GridImgBoxProps {
   imgUrl: StaticImageData;
   imgTitle: string;
   imgDescription: string;
@@ -20,26 +20,26 @@ function HomeThirdSection({ pageInfo }: HomeSectionProps) {
   return (
     <div className={style.section}>
       <div className={style.imgContainer}>
-        <HomeImgBox
+        <GridImgBox
           imgUrl={jangdokdaeImg}
           imgTitle={imgData[0].title}
           imgDescription={imgData[0].description}
-        ></HomeImgBox>
-        <HomeImgBox
+        />
+        <GridImgBox
           imgUrl={rockGardenImg}
           imgTitle={imgData[1].title}
           imgDescription={imgData[1].description}
-        ></HomeImgBox>
-        <HomeImgBox
+        />
+        <GridImgBox
           imgUrl={treeShelterImg}
           imgTitle={imgData[2].title}
           imgDescription={imgData[2].description}
-        ></HomeImgBox>
-        <HomeImgBox
+        />
+        <GridImgBox
           imgUrl={yardImg}
           imgTitle={imgData[3].title}
           imgDescription={imgData[3].description}
-        ></HomeImgBox>
+        />
       </div>
     </div>
   );

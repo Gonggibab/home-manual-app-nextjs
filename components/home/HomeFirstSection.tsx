@@ -10,7 +10,7 @@ import bgMtImg from '../../images/home/background_mountain.png';
 import { BsGeoAltFill } from 'react-icons/bs';
 
 function HomeFirstSection({ pageInfo }: HomeSectionProps) {
-  const [ratio, setTest] = useState<number>(1);
+  const [ratio, setRatio] = useState<number>(1);
 
   const opacity = useMotionValue(1);
   const titleY = useMotionValue(0);
@@ -19,7 +19,7 @@ function HomeFirstSection({ pageInfo }: HomeSectionProps) {
 
   const springConfig = {
     stiffness: 1000,
-    damping: 300,
+    damping: 100,
   };
 
   const springOpac = useSpring(opacity, springConfig);
@@ -28,7 +28,7 @@ function HomeFirstSection({ pageInfo }: HomeSectionProps) {
   const springMountain = useSpring(mountainY, springConfig);
 
   useEffect(() => {
-    setTest(pageInfo);
+    setRatio(pageInfo[0]);
 
     if (1 < ratio && ratio < 2) {
       opacity.set(3 - ratio * 2);
@@ -56,7 +56,7 @@ function HomeFirstSection({ pageInfo }: HomeSectionProps) {
         <motion.div className={style.image} style={{ y: springSky }}>
           <Image
             src={bgSkyImg}
-            alt="홈 배경 이미지"
+            alt="배경 하늘 이미지"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
@@ -69,7 +69,7 @@ function HomeFirstSection({ pageInfo }: HomeSectionProps) {
         >
           <Image
             src={bgMtImg}
-            alt="홈 배경 이미지"
+            alt="배경 산 이미지"
             layout="fill"
             objectFit="cover"
             objectPosition="center"

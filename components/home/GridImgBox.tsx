@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
 
-import { HomeImgBoxProps } from './HomeThirdSection';
+import { GridImgBoxProps } from './HomeThirdSection';
 
 import style from '../../styles/components/home/HomeThirdSection.module.scss';
 
-function HomeImgBox({ imgUrl, imgTitle, imgDescription }: HomeImgBoxProps) {
+function GridImgBox({ imgUrl, imgTitle, imgDescription }: GridImgBoxProps) {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
@@ -88,4 +88,4 @@ function HomeImgBox({ imgUrl, imgTitle, imgDescription }: HomeImgBoxProps) {
   );
 }
 
-export default HomeImgBox;
+export default GridImgBox;

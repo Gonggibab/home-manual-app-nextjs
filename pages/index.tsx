@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { NextPage } from 'next';
 
 import { onScroll } from '../utils/onScroll';
@@ -9,11 +9,11 @@ import HomeSecondSection from '../components/home/HomeSecondSection';
 import HomeThirdSection from '../components/home/HomeThirdSection';
 
 export interface HomeSectionProps {
-  pageInfo: number;
+  pageInfo: number[];
 }
 
 const Home: NextPage = () => {
-  const [pageInfos, setPageInfos] = useState<number[]>([]);
+  const [pageInfos, setPageInfos] = useState<number[][]>([[], [], []]);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

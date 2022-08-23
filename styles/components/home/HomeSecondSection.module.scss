@@ -2,36 +2,93 @@
 
 .section {  
   position: relative;
-  height: 500vh;  
-    
-  .yearContent {
+  height: 500vh;
+
+  @include device(mobile) {
+    height: 300vh;
+  }    
+
+  .bgText {
     position: sticky;
-    top:0;
-    height: 100vh;
+    top: 0%;
+    margin-left: auto;
+    height: 80vh;
     width: 100%;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+
+    @include device(tablet) {
+      top: 10%;
+    }     
+
+    .year {
+      position: absolute;
+      right: 10%;
+      font-weight: 900;
+      font-size: 16rem;
+
+      @include device(mobile) {
+        top: 10%;
+        font-size: 7rem;
+      }    
+    }
+
+    .historyTextBox {
+      position: absolute;
+      top: 40%;
+      left: 0;
+      display: flex;
+      font-weight: 700;
+      font-size: 6rem;
+
+      @include device(mobile) {
+        top: 30%;
+        font-size: 4rem;
+      }    
+
+      .historyText {
+        min-width: max-content;
+      }
+    }
+  }
+  
+  .imgContainer {
+    z-index: 1;
+    position: absolute;
+    top: 0;    
+    left: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
+    justify-content: space-between;
+    margin: auto;
+    height: 80%;
+    width: 80%;
 
-    h3{
-      margin-bottom: 2rem;
-      font-family: 'Gowun Batang', serif,;
-      font-size: 5rem;
+    @include device(tablet) {
+      left: 5%;
+      width: 90%;
+    }    
+
+    .imgBox {
+      position: relative;      
+      overflow: hidden;
+      width: 50%;
+      height: 80vh;
+
+      @include device(tablet) {
+        height: 60vh;
+      }   
 
       @include device(mobile) {
-        font-size: 3rem;
+        height: 50vh !important;
+      }    
+      
+      .image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(100%);
       }
-    }
-
-    p{
-      font-family: 'Gowun Batang', serif,;
-      font-size: 3rem;
-
-      @include device(mobile) {
-        font-size: 1.5rem;
-      }
-    }
+    }  
   }
 }

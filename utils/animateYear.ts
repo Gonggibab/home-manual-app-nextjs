@@ -1,19 +1,24 @@
 import { Dispatch, SetStateAction } from 'react';
 
 export const animateYear = (
-  currentYear: number,
-  targetYear: number,
-  setState: Dispatch<SetStateAction<number>>,
+  ratio: number,
+  year: number,
+  prev: number,
+  setYear: Dispatch<SetStateAction<number>>,
+  setPrev: Dispatch<SetStateAction<number>>,
+  setIsShown: Dispatch<SetStateAction<boolean>>,
 ) => {
-  let timer = setInterval(() => {
-    if (currentYear < targetYear) {
-      currentYear += 1;
-    } else if (currentYear > targetYear) {
-      currentYear -= 1;
-    } else {
-      clearInterval(timer);
-    }
+  let threshold = Math.round(ratio * 20 - 20);
+  if (-1 < threshold && threshold < 16) {
+    setIsShown(true);
+    setPrev(threshold);
 
-    setState(currentYear);
-  }, 100);
+    if (prev < threshold) {
+      setYear(year + 1);
+    } else if (prev > threshold) {
+      setYear(year - 1);
+    }
+  } else {
+    setIsShown(false);
+  }
 };
