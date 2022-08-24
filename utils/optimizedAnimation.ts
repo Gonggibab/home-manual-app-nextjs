@@ -1,6 +1,4 @@
-export const optimizedAnimation = (
-  callback: (this: Window, ev: Event) => any,
-) => {
+export const optimizedAnimation = (callback: () => any) => {
   let ticking = false;
 
   return () => {

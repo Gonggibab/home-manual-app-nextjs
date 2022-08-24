@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { optimizedAnimation } from '../optimizedAnimation';
 
-export const useScroll = (scrollListner: (this: Window, ev: Event) => any) => {
+export const useScroll = (scrollListner: () => any) => {
   useEffect(() => {
     window.addEventListener('scroll', optimizedAnimation(scrollListner), {
       passive: true,
