@@ -7,6 +7,7 @@ import { useScroll } from '../utils/hooks/useScroll';
 import HomeFirstSection from '../components/home/HomeFirstSection';
 import HomeSecondSection from '../components/home/HomeSecondSection';
 import HomeThirdSection from '../components/home/HomeThirdSection';
+import Footer from '../components/home/Footer';
 
 export interface HomeSectionProps {
   pageInfo: number[];
@@ -29,6 +30,7 @@ const Home: NextPage = () => {
       <HomeFirstSection pageInfo={pageInfos[0]} />
       <HomeSecondSection pageInfo={pageInfos[1]} />
       <HomeThirdSection pageInfo={pageInfos[2]} />
+      <Footer />
     </div>
   );
 };

@@ -40,10 +40,13 @@ a {
 }
 
 button {
+  padding: 0;
+  margin: 0;
   color :white;
   border: none;
   outline:none;
   cursor: pointer;
+  letter-spacing: 1.2px;
 }
 
 h1, h2, h3, h4, p {
@@ -55,7 +58,13 @@ h1, h2, h3, h4, p {
 /* 스크롤바 설정 */
 body::-webkit-scrollbar {
   width: 8px;  
+  
+  @include device(tablet) {
+    width: 0px;
+  } 
 }
+
+
 
 body::-webkit-scrollbar-thumb {
   height: 5%;
