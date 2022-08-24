@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue } from 'framer-motion';
 import { HistoryTextBoxProps } from './HomeSecondSection';
 
 import { getRandomInt } from '../../utils/getRandomInt';

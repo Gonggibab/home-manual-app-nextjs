@@ -4,7 +4,6 @@ import { motion, MotionValue, useMotionValue } from 'framer-motion';
 
 import { HomeSectionProps } from '../../pages';
 import { animateYear } from '../../utils/animateYear';
-import { animateText } from '../../utils/animateText';
 
 import style from '../../styles/components/home/HomeSecondSection.module.scss';
 import pastHomeImg1 from '../../images/home/past_home1.jpg';

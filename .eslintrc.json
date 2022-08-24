@@ -6,7 +6,7 @@
     "extends": [
         "plugin:react/recommended",
         "plugin:prettier/recommended",
-        "airbnb",
+        "plugin:@typescript-eslint/recommended",
         "next"
     ],
     "parser": "@typescript-eslint/parser",
@@ -23,5 +23,18 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "prettier/prettier": ["error", { "endOfLine": "auto" }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "linebreak-style": 0,
+        "no-unused-vars": "off"
     }
 }

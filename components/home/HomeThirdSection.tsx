@@ -1,5 +1,4 @@
 import { StaticImageData } from 'next/image';
-import { useEffect, useState } from 'react';
 
 import GridImgBox from './GridImgBox';
 import { HomeSectionProps } from '../../pages';
