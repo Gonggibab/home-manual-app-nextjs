@@ -27,7 +27,6 @@ function HomeSecondSection({ pageInfo }: HomeSectionProps) {
   const [ratio, setRatio] = useState<number>(0);
   const [width, setWidth] = useState<number>(0);
   const [isShown, setIsShown] = useState<boolean>(false);
-  const [prev, setPrev] = useState<number>(0);
   const [year, setYear] = useState<number>(2006);
 
   const image1Y = useMotionValue<number>(0);
@@ -43,12 +42,12 @@ function HomeSecondSection({ pageInfo }: HomeSectionProps) {
     setRatio(pageInfo[0]);
     setWidth(pageInfo[1]);
 
-    animateYear(ratio, year, prev, setYear, setPrev, setIsShown);
+    animateYear(ratio, setYear, setIsShown);
 
     image1Y.set(ratio * 1000 - 1000);
     image2Y.set(ratio * 1000 - 1200);
     image3Y.set(ratio * 1000 - 1500);
-  }, [pageInfo]);
+  }, [image1Y, image2Y, image3Y, pageInfo, year]);
 
   return (
     <div className={style.section}>

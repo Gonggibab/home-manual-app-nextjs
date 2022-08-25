@@ -5,7 +5,7 @@ export const onScroll = (ref: RefObject<HTMLElement>): number[][] => {
 
   const childs = target.childNodes as NodeListOf<HTMLElement>;
 
-  let info: number[][] = new Array(childs.length);
+  const info: number[][] = new Array(childs.length);
 
   for (let i = 0; i < childs.length; i++) {
     const width = document.body.getBoundingClientRect().width;

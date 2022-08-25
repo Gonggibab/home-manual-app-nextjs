@@ -7,7 +7,7 @@ export const animateText = (
   let n = 0;
   let p = '';
 
-  let timer = setInterval(() => {
+  const timer = setInterval(() => {
     if (n < targetText.length) {
       p += targetText[n];
       n += 1;

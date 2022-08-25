@@ -36,7 +36,7 @@ function HomeFirstSection({ pageInfo }: HomeSectionProps) {
       skyY.set(1200 - ratio * 1200);
       mountainY.set(1500 - ratio * 1500);
     }
-  }, [pageInfo]);
+  }, [mountainY, opacity, pageInfo, skyY, titleY]);
 
   return (
     <div className={style.section}>

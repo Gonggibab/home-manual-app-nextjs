@@ -64,7 +64,10 @@ function Footer() {
             <HiOutlineMail size={25} />
           </button>
         </div>
-        <label>created by Jinwoo Jeong</label>
+        <label>
+          <label>hosted by Vercel</label>
+          <label>created by Jinwoo Jeong </label>
+        </label>
       </div>
       <motion.div
         className={style.copyResult}
